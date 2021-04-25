@@ -1,0 +1,22 @@
+<%- include("header") -%>
+
+<div class="box" , id="heading">
+
+  <h1>Create New List</h1>
+
+</div>
+
+<div class="box" id="createBox">
+
+  <form class="item" id="newListForm" action="/newList" method="post">
+    <input type="text" name="title" placeholder="List Title" , autocomplete="off">
+  </form>
+
+</div>
+
+<!-- if button doesn't work, move it back inside the form -->
+<div class="Create">
+  <button class="newListButton" form="newListForm" type="submit">Create</button>
+</div>
+
+<%- include("footer") -%>

@@ -1,0 +1,31 @@
+<div class="footerBtns">
+  <a href="/logout" class="logOut"> <button class="logOutBtn turnOff blueBtn">Log Out</button></a>
+<% if(listName !== "Today"){ %>
+  <a class="delLst"><button class="editLstBtn delLstBtn turnOff purpleBtn" onclick="openDelete()">Delete List</button></a>
+  <a class="renameLst"><button class="editLstBtn renameLstBtn turnOff purpleBtn" onclick="openRename()">Rename List</button></a>
+<% } %>
+</div>
+
+
+<div class="box formPopUp" id="delForm">
+  <form class="" action="/deleteList" method="post">
+    <p>Are you sure? Any remaining list items will be lost.</p>
+    <button class="formBtn" type="submit" name="delLstBtn" value="<%= listName %>">Delete List</button>
+    <button type="button" class="formBtn cancel" onclick="closeDelete()">Cancel</button>
+  </form>
+</div>
+
+<div class="box formPopUp" id="renameForm">
+  <form class="" action="/renameList" method="post">
+    <p>Rename List</p>
+    <input type="text" name="newName" placeholder="New List Name" required>
+    <button class="formBtn" type="submit" name="renameBtn" value="<%= listName %>">Rename</button>
+    <button type="button" class="formBtn cancel" onclick="closeRename()">Cancel</button>
+  </form>
+</div>
+
+<script type="text/javascript" src="/JS/script.js"></script>
+
+</body>
+<footer>2021 Alpers</footer>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Date-Register</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/logReg.css">
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+  </head>
+  <body>
+    <div class="box" id="heading">
+      <h1>Create New Account</h1>
+    </div>
+    <div class="logreg">
+      <form action="/register" method="post">
+        <input type="email" name="username" placeholder="Email">
+        <br>
+        <input type="password" name="password" placeholder="Password">
+        <br>
+        <button class= "loginBtn purpleBtn" type="submit">Register</button>
+      </form>
+      <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+          <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
+            <i class="fab fa-facebook"></i>
+            Sign Up with Facebook
+          </a>
+    </div>
+    <span class="alert alert-danger" hidden>
+      <%if (error_message != '') { %>
+     <%= error_message %>
+     <% } %>
+   </span>
+  </body>
+  <footer>2021 Alpers</footer>
+  <script type="text/javascript" src="/JS/alert.js"></script>
+</html>

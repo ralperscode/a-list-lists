@@ -1,0 +1,70 @@
+warning: LF will be replaced by CRLF in public/css/styles.css.
+The file will have its original line endings in your working directory
+[1mdiff --git a/app.js b/app.js[m
+[1mindex 9ab5360..6e99ae0 100644[m
+[1m--- a/app.js[m
+[1m+++ b/app.js[m
+[36m@@ -44,6 +44,10 @@[m [mapp.get("/work", function(req, res){[m
+   res.render("list", {pageTitle: "Work ToDo's", items: workList});[m
+ })[m
+ [m
+[32m+[m[32mapp.get("/newList", function(req, res){[m
+[32m+[m[32m  res.render("newList");[m
+[32m+[m[32m})[m
+[32m+[m
+ app.listen(3000, function(){[m
+   console.log("Server running on port 3000");[m
+ });[m
+[1mdiff --git a/public/css/styles.css b/public/css/styles.css[m
+[1mindex 671e629..ecf0565 100644[m
+[1m--- a/public/css/styles.css[m
+[1m+++ b/public/css/styles.css[m
+[36m@@ -10,6 +10,10 @@[m [mh1 {[m
+   padding: 10px;[m
+ }[m
+ [m
+[32m+[m[32mbutton:hover {[m
+[32m+[m[32m  cursor: pointer;[m
+[32m+[m[32m}[m
+[32m+[m
+ .box {[m
+   max-width: 400px;[m
+   margin: 50px auto;[m
+[36m@@ -242,3 +246,24 @@[m [mfooter {[m
+ {[m
+   transform: none;[m
+ }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m/* extra css for new list page */[m
+[32m+[m
+[32m+[m[32m#newListForm {[m
+[32m+[m[32m  display: block;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#createBox{[m
+[32m+[m[32m  margin: 50px auto 25px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.Create{[m
+[32m+[m[32m  max-width: 400px;[m
+[32m+[m[32m  margin: 25px auto 50px;[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.newListButton {[m
+[32m+[m[32m  width: 200px;[m
+[32m+[m[32m}[m
+[1mdiff --git a/views/header.ejs b/views/header.ejs[m
+[1mindex 5bee140..ef0b0dc 100644[m
+[1m--- a/views/header.ejs[m
+[1m+++ b/views/header.ejs[m
+[36m@@ -33,7 +33,7 @@[m
+       <a href="work"><li>Work List</li></a>[m
+       <a href="#"><li>Info</li></a>[m
+       <a href="#"><li>Contact</li></a>[m
+[31m-      <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>[m
+[32m+[m[32m      <a href="newList"><li>New List</li></a>[m
+     </ul>[m
+   </div>[m
+ </nav>[m

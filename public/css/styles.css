@@ -1,0 +1,426 @@
+html {
+  background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+  min-height: 1000px;
+  font-family: 'helvetica neue';
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #fff;
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #00204a;
+}
+
+/* style for list box cards */
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+  background-color: #A683E3;
+  text-align: center;
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.checked{
+  text-decoration: line-through;
+  text-decoration-color: #A683E3;
+}
+
+.list-checkbox {
+  margin: 20px;
+}
+
+form.item {
+  text-align: center;
+  margin-left: 20px;
+}
+
+button {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #A683E3;
+  color: #fff;
+  font-size: 30px;
+  /* padding-bottom: 6px; */
+  border-width: 0;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  text-align: center;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #A683E3;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+
+footer {
+  color: white;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* start hamburger css */
+
+.ham-checkbox{
+  margin: 0;  /* over-ride margin set for checkbox above */
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  padding-bottom:5px;
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -60px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+/* extra css for new list page */
+
+#newListForm {
+  display: block;
+}
+
+#createBox{
+  margin: 50px auto 25px;
+}
+
+.Create{
+  max-width: 400px;
+  margin: 25px auto 50px;
+  text-align: center;
+}
+
+.newListButton {
+  width: 200px;
+}
+
+/* for error page */
+.error{
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.errorButton{
+  width: 175px;
+}
+
+.errorAnchor{
+  text-decoration: none;
+}
+
+/* styling for other buttons and styling for edit list divs */
+
+.clearChecked{
+  margin: 25px auto 50px;
+  text-align: center;
+}
+.clearCheckedBtn{
+  min-width: 150px;
+  min-height: 75px;
+  font-size: 15px;
+  background-color: #892CDC;
+}
+
+.footerBtns{
+  position: fixed;
+  width: 100%;
+  bottom: 75px;
+}
+
+.logOut{
+  position: absolute;
+  left: 30px;
+}
+
+.logOutBtn{
+  background-color: #E4E9FD;
+  font-size: 20px;
+  width: 100px;
+  color: #A683E3;
+}
+
+.delLst{
+  right: 30px;
+  position: absolute;
+}
+
+.renameLst{
+  right: 30px;
+  bottom: 10px;
+  position:absolute;
+}
+
+.editLstBtn{
+  background-color: #A683E3;
+  font-size: 15px;
+  width: 100px;
+  color: #E4E9FD;
+  border: 2px;
+  border-style: solid;
+  border-color: #E4E9FD
+}
+
+.formPopUp{
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  margin: auto;
+  max-height: 250px;
+  box-shadow: 10px 10px 50px 20px grey;
+}
+
+#renameForm{
+  max-height: 300px;
+}
+
+.formPopUp p{
+  font-size: 25px
+}
+
+.formPopUp input{
+  border:2px solid gainsboro;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 75%;
+}
+.formPopUp input:focus{
+  background-color: #ddd;
+}
+
+.formBtn{
+  width: 75%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size:20px;
+}
+
+.blur {
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	-o-filter: blur(3px);
+	-ms-filter: blur(3px);
+	filter: blur(3px);
+}
+
+.purpleBtn:hover{
+  background-color: #8859da;
+}
+
+.blueBtn:hover{
+  background-color: #ccd6fb;
+}
+
+/* attempted responsive design */
+
+@media(max-width:750px){
+  .footerBtns{
+    position:static;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .logOut{
+    position: relative;
+    left:0;
+    display: inline-block;
+  }
+
+  .delLst{
+    position: relative;
+    right:0;
+    bottom: 2px;
+    display: inline-block;
+    padding: 0 5px;
+  }
+
+  .renameLst{
+    position:relative;
+    right: 0px;
+    bottom: 11px;
+    display: inline-block;
+  }
+}

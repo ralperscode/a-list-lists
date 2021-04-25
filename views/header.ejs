@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Date TEST</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav role="navigation">
+  <div id="menuToggle">
+
+    <!-- Hamburger menu code was found online with a few modifications made
+    Unfortunately at the time I did not save the source and can no longer
+    find it... -->
+
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" class="ham-checkbox" />
+
+    <!--
+    Some spans to act as a hamburger.
+
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="/"><li>Personal List</li></a>
+      <% listTitles.forEach(function(list){ %>
+        <a href="<%= list %>"><li> <%= list %> </li></a>
+      <% }) %>
+      <a href="newList"><li>New List</li></a>
+    </ul>
+  </div>
+</nav>

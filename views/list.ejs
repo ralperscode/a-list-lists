@@ -1,0 +1,33 @@
+<%- include("header") -%>
+
+<div class="box" id="heading">
+  <h1><%= pageTitle %></h1>
+</div>
+
+<div class="box">
+  <% items.forEach(function(item){ %>
+  <form action="/delete" method="post">
+    <div class="item">
+      <!-- hidden input that is always submited despite the status of the checkbox -->
+      <input type="hidden" name="checkboxIdTag" value="<%= item._id %>">
+      <!-- input with itemCheckedStatus that will automatically render checkbox as checked or not -->
+      <input type="checkbox" class="list-checkbox" onchange="this.form.submit()" name="checkbox" value= "<%= item._id %>" <%= item.checkedStatus%>>
+      <p class="<%= item.checkedStatus %>"> <%= item.name %> </p>
+    </div>
+    <input type="hidden" name="list" value="<%= listName %>"></input>
+  </form>
+  <% }) %>
+
+  <form class="item" action="/" method="post">
+    <input type="text" name="addToList" placeholder="Add item" , autocomplete="off">
+    <button class="turnOff purpleBtn" type="submit" name="list" , value="<%= listName %>">+</button>
+  </form>
+</div>
+
+<div class="clearChecked">
+  <form action="/clearChecked" method="post">
+    <button class = "clearCheckedBtn turnOff purpleBtn" type="submit" name="clearCheckedBtn" value= "<%= listName %>" >Delete Checked Items</button>
+  </form>
+</div>
+
+<%- include("footer") -%>
